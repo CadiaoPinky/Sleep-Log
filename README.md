@@ -1,4 +1,4 @@
-App Title: Sleep Log 
+# Sleep Log 
 Description: A simple sleep log for students. 
 Record when you went to bed and when you woke up, and see your average sleep. 
 
