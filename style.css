@@ -1,0 +1,212 @@
+:root {
+  --bg: #e4f2fc;
+  --card: #f6fbff;
+  --text: #1f3347;
+  --muted: #52697e;
+  --primary: #2878bd;
+  --on-primary: #ffffff;
+  --border: #93aab9;
+  --danger: #b3261e;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #862a7a;
+  --card: #5a1a52;
+  --text: #ffffff;
+  --muted: #f0d4f5;
+  --primary: #f2c4ff;
+  --on-primary: #3a0f35;
+  --border: #643a5f;
+  --danger: #ffc2cf;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 20px 20px 48px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+h1 { margin: 0; font-size: 1.6rem; font-weight: 800; }
+h2 { margin: 0 0 12px; font-size: 1.05rem; font-weight: 700; }
+
+.theme-btn {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.average {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: 24px;
+  padding: 22px 22px 24px;
+  margin-bottom: 24px;
+}
+.average p { margin: 0; }
+.average-label { font-weight: 600; opacity: 0.9; }
+.average-value { font-size: 3rem; font-weight: 800; line-height: 1.15; margin: 4px 0; }
+.average-value.empty-state { font-size: 1.9rem; }
+.average-note { opacity: 0.9; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 28px;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 12px 0 4px;
+}
+
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-family: inherit;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.preview {
+  margin: 14px 0;
+  font-weight: 600;
+  color: var(--muted);
+}
+.preview.error { color: var(--danger); }
+
+.primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--on-primary);
+  background: var(--primary);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.message { margin: 10px 0 0; min-height: 1.4em; font-weight: 600; color: var(--primary); }
+.message.error { color: var(--danger); }
+
+.log-list { list-style: none; padding: 0; margin: 0; }
+
+.log {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.log-hours {
+  min-width: 68px;
+  text-align: center;
+  padding: 10px 6px;
+  border-radius: 12px;
+  font-weight: 800;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 16%, transparent);
+}
+
+.log-times { flex: 1; font-size: 0.92rem; }
+.log-times .wake { color: var(--muted); }
+
+.delete {
+  background: none;
+  border: none;
+  color: var(--danger);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.empty { color: var(--muted); }
+
+.warning {
+  background: var(--card);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.warning[hidden] { display: none; }
+
+/* Delete confirmation */
+.dialog {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 22px;
+  width: min(360px, calc(100% - 40px));
+}
+.dialog::backdrop { background: rgba(0, 0, 0, 0.5); }
+.dialog h3 { margin: 0 0 8px; font-size: 1.15rem; }
+.dialog-text { margin: 0 0 8px; color: var(--muted); }
+.dialog-detail { margin: 0 0 18px; font-weight: 600; }
+.dialog-actions { display: flex; gap: 10px; }
+.dialog-actions button {
+  flex: 1;
+  padding: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.danger-btn {
+  background: var(--danger);
+  color: var(--card);
+  border: 1px solid var(--danger);
+}

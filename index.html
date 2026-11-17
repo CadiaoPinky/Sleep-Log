@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sleep Log</title>
+  <meta name="theme-color" content="#e4f2fc" />
+  <meta name="description" content="A simple sleep log for students. Record bedtime and wake time and see your average sleep." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Sleep Log" />
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Sleep Log</h1>
+      <button id="themeBtn" class="theme-btn" type="button" aria-label="Switch between light and dark theme">🌙 Dark</button>
+    </header>
+
+    <p id="storageWarning" class="warning" hidden>
+      ⚠️ Your browser is blocking access to local storage. This app will not work properly. Please check your browser settings.
+    </p>
+
+    <section class="average" aria-live="polite">
+      <p class="average-label">Average sleep</p>
+      <p id="averageValue" class="average-value">No data yet</p>
+      <p id="averageNote" class="average-note">Log a night to see your average.</p>
+    </section>
+
+    <section class="card">
+      <h2>Log your sleep</h2>
+
+      <label for="bedtime">Bedtime</label>
+      <input type="datetime-local" id="bedtime" />
+
+      <label for="wake">Wake time</label>
+      <input type="datetime-local" id="wake" />
+
+      <p id="preview" class="preview"></p>
+
+      <button id="saveBtn" class="primary">Save</button>
+      <p id="message" class="message" role="status"></p>
+    </section>
+
+    <section>
+      <h2>Past logs</h2>
+      <ul id="logList" class="log-list"></ul>
+      <p id="emptyNote" class="empty">No logs yet. Save your first night above.</p>
+    </section>
+  </main>
+
+
+  <dialog id="confirmDialog" class="dialog" aria-labelledby="confirmTitle">
+    <h3 id="confirmTitle">Delete this log?</h3>
+    <p id="confirmDetail" class="dialog-detail"></p>
+    <div class="dialog-actions">
+      <button id="confirmNo" class="secondary" type="button" autofocus>No</button>
+      <button id="confirmYes" class="danger-btn" type="button">Yes, delete</button>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
