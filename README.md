@@ -15,7 +15,7 @@ Features:
 
 How to Install and Run:
 1. Open the live app link in your phone's browser:
-   [cadiaopinky.github.io/Sleep-Log/](cadiaopinky.github.io/Sleep-Log/)
+  https://cadiaopinky.github.io/Sleep-Log/
 2. Android (Chrome): tap the menu (three dots), scroll, then tap install and create shortcut.
 3. iPhone (Safari): tap Share, then tap Add to Home Screen.
 4. Open Sleep Log from your home screen. After the first visit, it also works without internet.
