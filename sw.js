@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "sleep-log-v1";
+const CACHE_NAME = "Sleep-Log";
 
 const FILES_TO_CACHE = [
   "./",
